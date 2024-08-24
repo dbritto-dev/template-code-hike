@@ -12,7 +12,7 @@ export const RemotionRoot = () => {
 			defaultProps={{
 				steps: null,
 				themeColors: null,
-				theme: 'github-dark' as const,
+				theme: 'frappe',
 				codeWidth: null,
 				width: {
 					type: 'auto',

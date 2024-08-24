@@ -1,11 +1,10 @@
-import {z} from 'zod';
-import {CalculateMetadataFunction} from 'remotion';
-import {getThemeColors} from '@code-hike/lighter';
-import {Props} from '../Main';
-import {schema} from './schema';
-import {processSnippet} from './process-snippet';
-import {getFiles} from './get-files';
+import type {z} from 'zod';
+import type {CalculateMetadataFunction} from 'remotion';
 import {measureText} from '@remotion/layout-utils';
+import type {HighlightedCode} from 'codehike/code';
+import {getThemeColors} from '@code-hike/lighter';
+import {latte, frappe, macchiato, mocha} from '@catppuccin/vscode';
+
 import {
 	fontFamily,
 	fontSize,
@@ -13,7 +12,10 @@ import {
 	tabSize,
 	waitUntilDone,
 } from '../font';
-import {HighlightedCode} from 'codehike/code';
+import type {schema} from './schema';
+import {processSnippet} from './process-snippet';
+import type {Props} from '../Main';
+import {getFiles} from './get-files';
 
 export const calculateMetadata: CalculateMetadataFunction<
 	Props & z.infer<typeof schema>
@@ -39,11 +41,12 @@ export const calculateMetadata: CalculateMetadataFunction<
 
 	const defaultStepDuration = 90;
 
-	const themeColors = await getThemeColors(props.theme);
+	const rawTheme = {latte, frappe, macchiato, mocha}[props.theme];
+	const themeColors = await getThemeColors(rawTheme);
 
 	const twoSlashedCode: HighlightedCode[] = [];
 	for (const snippet of contents) {
-		twoSlashedCode.push(await processSnippet(snippet, props.theme));
+		twoSlashedCode.push(await processSnippet(snippet, rawTheme));
 	}
 
 	const naturalWidth = codeWidth + horizontalPadding * 2;

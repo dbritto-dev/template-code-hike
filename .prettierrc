@@ -1,10 +1,12 @@
 {
   "singleQuote": true,
   "bracketSpacing": false,
-  "useTabs": true,
+  "useTabs": false,
   "overrides": [
     {
-      "files": ["*.yml"],
+      "files": [
+        "*.yml"
+      ],
       "options": {
         "singleQuote": false
       }

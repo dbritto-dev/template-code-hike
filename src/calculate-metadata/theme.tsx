@@ -11,24 +11,24 @@ export type Theme = z.infer<typeof themeSchema>;
 export const ThemeColorsContext = React.createContext<ThemeColors | null>(null);
 
 export const useThemeColors = () => {
-	const themeColors = React.useContext(ThemeColorsContext);
-	if (!themeColors) {
-		throw new Error('ThemeColorsContext not found');
-	}
+  const themeColors = React.useContext(ThemeColorsContext);
+  if (!themeColors) {
+    throw new Error('ThemeColorsContext not found');
+  }
 
-	return themeColors;
+  return themeColors;
 };
 
 export const ThemeProvider = ({
-	children,
-	themeColors,
+  children,
+  themeColors,
 }: {
-	children: React.ReactNode;
-	themeColors: ThemeColors;
+  children: React.ReactNode;
+  themeColors: ThemeColors;
 }) => {
-	return (
-		<ThemeColorsContext.Provider value={themeColors}>
-			{children}
-		</ThemeColorsContext.Provider>
-	);
+  return (
+    <ThemeColorsContext.Provider value={themeColors}>
+      {children}
+    </ThemeColorsContext.Provider>
+  );
 };

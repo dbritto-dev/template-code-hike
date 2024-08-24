@@ -1,9 +1,10 @@
+import {useMemo} from 'react';
 import {AbsoluteFill, Series, useVideoConfig} from 'remotion';
+import type {HighlightedCode} from 'codehike/code';
+
 import {ProgressBar} from './ProgressBar';
 import {CodeTransition} from './CodeTransition';
-import {HighlightedCode} from 'codehike/code';
-import {ThemeColors, ThemeProvider} from './calculate-metadata/theme';
-import {useMemo} from 'react';
+import {type ThemeColors, ThemeProvider} from './calculate-metadata/theme';
 import {RefreshOnCodeChange} from './ReloadOnCodeChange';
 import {verticalPadding} from './font';
 

@@ -1,12 +1,12 @@
 import {Easing, interpolate} from 'remotion';
 import {continueRender, delayRender, useCurrentFrame} from 'remotion';
-import {Pre, HighlightedCode, AnnotationHandler} from 'codehike/code';
+import {Pre, type HighlightedCode, type AnnotationHandler} from 'codehike/code';
 import React, {useEffect, useLayoutEffect, useMemo, useState} from 'react';
 
 import {
 	calculateTransitions,
 	getStartingSnapshot,
-	TokenTransitionsSnapshot,
+	type TokenTransitionsSnapshot,
 } from 'codehike/utils/token-transitions';
 import {applyStyle} from './utils';
 import {callout} from './annotations/Callout';

@@ -1,7 +1,12 @@
-import {InlineAnnotation, AnnotationHandler, InnerToken} from 'codehike/code';
 import {interpolate, useCurrentFrame} from 'remotion';
-import {useThemeColors} from '../calculate-metadata/theme';
+import {
+	type InlineAnnotation,
+	type AnnotationHandler,
+	InnerToken,
+} from 'codehike/code';
 import {mix, readableColor} from 'polished';
+
+import {useThemeColors} from '../calculate-metadata/theme';
 
 export const errorInline: AnnotationHandler = {
 	name: 'error',

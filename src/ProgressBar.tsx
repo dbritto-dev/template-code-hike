@@ -1,7 +1,8 @@
+import type React from 'react';
 import {useMemo} from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
+
 import {useThemeColors} from './calculate-metadata/theme';
-import React from 'react';
 
 const Step: React.FC<{
 	index: number;
@@ -30,7 +31,7 @@ const Step: React.FC<{
 				index > currentStep
 					? 0
 					: index === currentStep
-						? currentStepProgress * 100 + '%'
+						? `${currentStepProgress * 100}%`
 						: '100%',
 		};
 	}, [themeColors.icon.foreground, index, currentStep, currentStepProgress]);

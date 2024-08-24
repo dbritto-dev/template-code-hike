@@ -1,8 +1,8 @@
 import {highlight} from 'codehike/code';
 import {createTwoslashFromCDN} from 'twoslash-cdn';
-import {PublicFolderFile} from './get-files';
-import {Theme} from './theme';
-import {CompilerOptions, JsxEmit, ScriptTarget} from 'typescript';
+import type {PublicFolderFile} from './get-files';
+import type {RawTheme} from '@code-hike/lighter';
+import {type CompilerOptions, JsxEmit, ScriptTarget} from 'typescript';
 
 const compilerOptions: CompilerOptions = {
 	lib: ['dom', 'es2023'],
@@ -14,7 +14,10 @@ const twoslash = createTwoslashFromCDN({
 	compilerOptions,
 });
 
-export const processSnippet = async (step: PublicFolderFile, theme: Theme) => {
+export const processSnippet = async (
+	step: PublicFolderFile,
+	theme: RawTheme,
+) => {
 	const splitted = step.filename.split('.');
 	const extension = splitted[splitted.length - 1];
 

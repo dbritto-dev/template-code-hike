@@ -1,4 +1,4 @@
-import {TokenTransition} from 'codehike/utils/token-transitions';
+import type {TokenTransition} from 'codehike/utils/token-transitions';
 import {interpolate, interpolateColors} from 'remotion';
 
 export function applyStyle({

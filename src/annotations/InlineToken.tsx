@@ -1,4 +1,4 @@
-import {AnnotationHandler, InnerToken} from 'codehike/code';
+import {type AnnotationHandler, InnerToken} from 'codehike/code';
 
 export const tokenTransitions: AnnotationHandler = {
 	name: 'token-transitions',

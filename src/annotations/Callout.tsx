@@ -1,12 +1,13 @@
+import {interpolate, useCurrentFrame} from 'remotion';
 import {
-	InlineAnnotation,
-	AnnotationHandler,
+	type InlineAnnotation,
+	type AnnotationHandler,
 	InnerLine,
 	Pre,
 } from 'codehike/code';
-import {interpolate, useCurrentFrame} from 'remotion';
-import {useThemeColors} from '../calculate-metadata/theme';
 import {mix, readableColor} from 'polished';
+
+import {useThemeColors} from '../calculate-metadata/theme';
 
 export const callout: AnnotationHandler = {
 	name: 'callout',
